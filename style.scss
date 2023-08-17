@@ -23,14 +23,70 @@ body{
 }
 
 header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 /****************
       Nav
 *****************/
+
+.nav{
+  position: absolute;
+  background-color: $background-color;
+  width: 100svw;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.hidden{
+    display: none;
+  }
+
+  @media screen and (min-width: 900px) {
+    display: block !important;
+    position: static;
+    background-color: none;
+    width: auto;
+    height: auto;
+
+    &__list{
+      flex-direction: row;
+    }
+  }
+
+
+  &__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+
+    &__Object{
+      font-size: 1.2rem;
+
+      &.selected{
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        font-weight: 700;
+      }
+    }
+  }
+
+
+  
+}
+
+.mobile-nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .logo{
   color: white;
@@ -45,10 +101,16 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: all .5s ease-in-out ;
+  z-index: 101;
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+  
 
   &__burger{
     @include menu-lines;
@@ -117,5 +179,59 @@ header{
       font-size: 1.4rem;
     }
   }
-
 }
+
+/****************
+      Project
+*****************/
+.project-display{
+  position: relative;
+  margin-top: 2.5rem;
+
+  &__project-image{
+    width: 100%;
+  }
+  
+  &__description{
+    max-width: 290px;
+    margin: auto;
+    background-color: $background-color;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    position: relative;
+    top: -50px;
+    left: 15px;
+
+    @media screen and (min-width: 650px) {
+      max-width: 400px;
+    }
+    
+    &__title-container{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        gap: 1rem;
+
+        &__img{
+          max-width: 40px;
+          border-radius: 50px;
+        }
+
+        &__info{
+
+          &__creator{
+            font-size: .8rem;
+            margin-bottom: .2rem;
+          }
+
+          &__type{
+            font-size: .8rem;
+            font-weight: 200;
+          }
+        }
+
+    }
+  }
+}
+
+

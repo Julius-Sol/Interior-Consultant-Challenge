@@ -13,14 +13,62 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 /****************
       Nav
 *****************/
+.nav {
+  position: absolute;
+  background-color: #181719;
+  width: 100svw;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav.hidden {
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  .nav {
+    display: block !important;
+    position: static;
+    background-color: none;
+    width: auto;
+    height: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+  }
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+.nav__list__Object {
+  font-size: 1.2rem;
+}
+.nav__list__Object.selected {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  font-weight: 700;
+}
+
+.mobile-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
   color: white;
   border: white 1px solid;
@@ -34,10 +82,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  z-index: 101;
+}
+@media screen and (min-width: 900px) {
+  .menu-btn {
+    display: none;
+  }
 }
 .menu-btn__burger {
   width: 30px;
@@ -101,4 +155,48 @@ header {
 .intro__read-more__arrow {
   margin-left: 1rem;
   font-size: 1.4rem;
+}
+
+/****************
+      Project
+*****************/
+.project-display {
+  position: relative;
+  margin-top: 2.5rem;
+}
+.project-display__project-image {
+  width: 100%;
+}
+.project-display__description {
+  max-width: 290px;
+  margin: auto;
+  background-color: #181719;
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  position: relative;
+  top: -50px;
+  left: 15px;
+}
+@media screen and (min-width: 650px) {
+  .project-display__description {
+    max-width: 400px;
+  }
+}
+.project-display__description__title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.project-display__description__title-container__img {
+  max-width: 40px;
+  border-radius: 50px;
+}
+.project-display__description__title-container__info__creator {
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+.project-display__description__title-container__info__type {
+  font-size: 0.8rem;
+  font-weight: 200;
 }/*# sourceMappingURL=style.css.map */
