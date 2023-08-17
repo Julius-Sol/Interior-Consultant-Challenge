@@ -10,11 +10,28 @@ body {
   width: 90%;
   margin: auto;
   color: white;
+  max-width: 1000px;
 }
 
 header {
   margin-top: 1.5rem;
   margin-bottom: 3rem;
+}
+@media screen and (min-width: 900px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 /****************
@@ -43,9 +60,6 @@ header {
     width: auto;
     height: auto;
   }
-  .nav__list {
-    flex-direction: row;
-  }
 }
 .nav__list {
   list-style: none;
@@ -54,8 +68,19 @@ header {
   gap: 1.5rem;
   text-align: center;
 }
+@media screen and (min-width: 900px) {
+  .nav__list {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
 .nav__list__Object {
   font-size: 1.2rem;
+}
+@media screen and (min-width: 900px) {
+  .nav__list__Object {
+    font-size: 0.9rem;
+  }
 }
 .nav__list__Object.selected {
   text-decoration: underline;
@@ -135,6 +160,11 @@ header {
 .intro {
   margin-top: 1.2rem;
 }
+@media screen and (min-width: 900px) {
+  .intro {
+    margin-top: 0;
+  }
+}
 .intro__title {
   margin-bottom: 2rem;
   font-weight: 500;
@@ -166,6 +196,7 @@ header {
 }
 .project-display__project-image {
   width: 100%;
+  max-width: 600px;
 }
 .project-display__description {
   max-width: 290px;
@@ -180,6 +211,12 @@ header {
 @media screen and (min-width: 650px) {
   .project-display__description {
     max-width: 400px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .project-display__description {
+    max-width: 300px;
+    left: 120px;
   }
 }
 .project-display__description__title-container {

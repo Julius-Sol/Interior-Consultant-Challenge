@@ -20,11 +20,28 @@ body{
   width: 90%;
   margin: auto;
   color: white;
+  max-width: 1000px;
 }
 
 header{
   margin-top: 1.5rem;
   margin-bottom: 3rem;
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+}
+
+main{
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 /****************
@@ -53,10 +70,6 @@ header{
     background-color: none;
     width: auto;
     height: auto;
-
-    &__list{
-      flex-direction: row;
-    }
   }
 
 
@@ -67,8 +80,19 @@ header{
     gap: 1.5rem;
     text-align: center;
 
+    @media screen and (min-width: 900px) {
+      flex-direction: row;
+      gap: 5rem;
+      
+    }
+
     &__Object{
       font-size: 1.2rem;
+
+      @media screen and (min-width: 900px) {
+        font-size: .9rem;
+        
+      }
 
       &.selected{
         text-decoration: underline;
@@ -154,6 +178,10 @@ header{
 
   margin-top: 1.2rem;
 
+  @media screen and (min-width: 900px) {
+    margin-top: 0;
+  }
+
   &__title{
     margin-bottom: 2rem;
     font-weight: 500;
@@ -190,6 +218,7 @@ header{
 
   &__project-image{
     width: 100%;
+    max-width: 600px;
   }
   
   &__description{
@@ -206,6 +235,10 @@ header{
       max-width: 400px;
     }
     
+    @media screen and (min-width: 900px) {
+      max-width: 300px;
+      left:120px
+    }
     &__title-container{
         display: flex;
         align-items: center;
